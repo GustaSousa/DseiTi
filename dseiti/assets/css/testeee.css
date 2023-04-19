@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Kanit', sans-serif;
+    background: #394053;
+}
+
+.botao{
+    position: absolute;
+    background-color: rgb(201, 201, 99);
+    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+
+.botao a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.botao-excluir{
+    top: 200px;
+    position: absolute;
+    background-color: rgb(155, 69, 69);
+    border-radius: 25px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+
+.botao-excluir a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

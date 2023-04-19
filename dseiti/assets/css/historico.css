@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
+
+body,html{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    font-family: 'Kanit', sans-serif;
+    background: #394053;
+    color: #FFF;;
+}
+
+.box{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.historico-box{
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 80px;
+    border-radius: 15px;
+}
+
+.historico-box a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    
+    margin: 2px;
+
+    background-color: #3C4254;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.box a:hover{
+    background-color: #7CAE7A;
+}
+
+.voltar{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.voltar a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    
+    margin: 2px;
+
+    background-color: rgba(0, 0, 0, 0.414);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.voltar a:hover{
+    background-color: #7CAE7A;
+}
+
+.tabela-historico{
+    position: absolute;
+    width: 100%;
+    margin-top: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media(max-width: 800px) {
+    .historico-box{
+
+        flex-direction: column; 
+    }
+}

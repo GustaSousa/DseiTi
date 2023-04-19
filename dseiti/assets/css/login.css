@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Kanit', sans-serif;
+    background: #394053;
+}
+
+.login{
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+}
+
+.inputLogin{
+    padding: 15px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    margin-bottom: 7px;
+}
+
+.inputLogin:hover{
+    background-color: rgb(80, 83, 80);
+}
+
+.loginButton{
+    color: #FFF;
+    background-color: #3C4254;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+
+    cursor: pointer;
+}
+
+.loginButton:hover{
+    background-color: #7CAE7A;
+}

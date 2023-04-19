@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
+
+body,html{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    font-family: 'Kanit', sans-serif;
+    background: #394053;
+    color: #FFF;
+}
+
+.box{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-box{
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.home-box a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    
+    margin: 2px;
+
+    background-color: #353a49;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.home-box a:hover{
+    background-color: #7CAE7A;
+}
+
+.voltar{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.voltar a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    
+    margin: 2px;
+
+    background-color: rgba(0, 0, 0, 0.414);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.voltar a:hover{
+    background-color: #7CAE7A;
+}
+
+@media(max-width: 800px) {
+    .home-box{
+
+        flex-direction: column; 
+    }
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
+
+body,html{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Kanit', sans-serif;
+    background: #394053;
+    color: #FFF;
+    flex-direction: column;
+}
+
+.voltar{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.voltar a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    
+    margin: 2px;
+
+    background-color: rgba(0, 0, 0, 0.414);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.voltar a:hover{
+    background-color: #7CAE7A;
+}
+
+.tabela-historico{
+    display: flex;
+    justify-content: center;
+    /*position: absolute;
+    width: 100%;*/
+    margin-top: 0%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+}
+
+.box-search{
+    display: flex;
+    justify-content: center;
+    gap: 0.3%;
+}
+
+.box-search input{
+    color: #FFF;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.414);
+}
+
+.box-search input::placeholder{
+    color: rgba(255, 255, 255, 0.644);
+}
+
+.box-search button{
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.414);
+}
+
+.box-search button:hover{
+    background-color: #7CAE7A;
+}
+
+.box-mounth{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    gap: 0.1%;
+}
+
+.box-mounth a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    
+    margin: 2px;
+
+    background-color: rgba(0, 0, 0, 0.414);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.box-mounth a:hover{
+    background-color: #7CAE7A;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1920px){
+    body{
+        zoom: 0.8;  
+    }
+}
+
+@media screen and (max-width: 1400px){
+    body{
+        zoom: 0.75;  
+    }
+}
