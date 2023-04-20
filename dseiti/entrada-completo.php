@@ -102,24 +102,6 @@
                     <label for="observaco" class="lableInput">Observações</label>
                 </div>
 
-            <!--
-                <div class="genderInputs">
-                    <div class="genderTitle">
-                        <p>Realizou</p>
-                    </div>
-                    <div class="realizou-group">
-                        <div class="realizou-input">
-                            <input id="Sim" type="radio" name="realizou" value="Sim" <?php echo $realizou == 'Sim' ? 'checked' : '' ?> required>
-                            <label for="Sim">Sim</label>
-                        </div>
-                        <div class="realizou-input">
-                            <input id="Não" type="radio" name="realizou" value="Não" <?php echo $realizou == 'Não' ? 'checked' : '' ?> required>
-                            <label for="Não">Não</label>
-                        </div>
-                    </div>
-                </div>
-                <br>
-            -->
 
                 <div class="inputBox">
                     <label for="data_entrada">Data De Entrada:</label>
@@ -130,11 +112,6 @@
                     <label for="data_saida">Data De Saída:</label>
                     <input type="datetime-local" name="data_saida" id="data_saida" class="inputUser" value="<?php echo $data_saida ?>" required>
                 </div>
-<!--
-                <div class="submit" id="subimit">
-                    <a href="historico-entradas.php">Historico</a>
-                </div>
--->
             </fieldset>
         </form>
     </div>

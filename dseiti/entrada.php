@@ -12,19 +12,14 @@
     {
 
         $nome = $_POST['nome'];
-            $sqlEtinia = "SELECT etinia FROM registros WHERE nome='$nome'";
-            $resultEtinia = $conexao->query($sqlEtinia);
-            $registros_etinia = mysqli_fetch_assoc($resultEtinia);
-        $etinia = $registros_etinia ['etinia'];
-        $tipo_hospedagem = $_POST['tipo_hospedagem'];
-        $hospital = $_POST['hospital'];
-        $tipo_consulta = $_POST['tipo_consulta'];
-        $data_consulta = $_POST['data_consulta'];
-        $observacoes = $_POST['observacoes'];
-        $data_entrada = $_POST['data_entrada'];
+        $id_pc = $_POST['id_pc'];
+        $local_origem = $_POST['local_origem'];
+        $local_destino = $_POST['local_destino'];
+        $motorista = $_POST['motorista'];
         $data_saida = $_POST['data_saida'];
+        $complemento = $_POST['complemento'];
 
-        $result = mysqli_query($conexao, "INSERT INTO entradas (nome,etinia,tipo_hospedagem,hospital,tipo_consulta,data_consulta,observacoes,data_entrada,data_saida) VALUES ('$nome','$etinia','$tipo_hospedagem','$hospital','$tipo_consulta','$data_consulta','$observacoes','$data_entrada','$data_saida')");
+        $result = mysqli_query($conexao, "INSERT INTO entradas (nome,id_pc,local_origem,local_destino,motorista,data_saida,complemento) VALUES ('$nome','$id_pc','$local_origem','$local_destino','$motorista','$data_saida','$complemento')");
 
         header('Location: historico-entradas.php');
     }
@@ -39,8 +34,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASAI | Entradas</title>
-    <link rel="stylesheet" href="assets//css/style.css">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="voltar">
@@ -63,74 +58,54 @@
                     </datalist>
                 </div>
                 
-                <div class="genderInputs">
-                    <div class="genderTitle">
-                        <p>Tipo de Hospedagem:</p>
+                <div class="inputBox">
+                        <input type="text" name="id_pc" id="id_pc" class="inputUser" maxlength="45" placeholder="" autocomplete="off" required>
+                        <label for="id_pc" class="lableInput">ID</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" name="local_origem" id="local_origem" class="inputUser" maxlength="45" placeholder="" list="polos" autocomplete="off" required>
+                    <label for="local_origem" class="lableInput">Local de Origem</label>
+                    <datalist id="polos">
+                        <option value="Atikum">
+                        <option value="Atikum Salgueiro">
+                        <option value="Dsei TI">
+                        <option value="Funil-Ô">
+                        <option value="Kambiwá">
+                        <option value="Kapinawá">
+                        <option value="Pankará">
+                        <option value="Pankararu">
+                        <option value="Pankararu Entre Serras">
+                        <option value="Pipipã">
+                        <option value="Truká">
+                        <option value="Truká Orocó">
+                        <option value="Tuxá">
+                        <option value="Tuxí">
+                        <option value="Xukuru de Cimbres">
+                        <option value="Xukuru de Ororubá">
+                    </datalist>
                     </div>
-                    <div class="tipo-hospedagem-group">
-                        <div class="tipo-hospedagem-input">
-                            <input id="visitante
-                                            
-                            '" type="radio" name="tipo_hospedagem" value="Visitante" required>
-                            <label for="visitante">Visitante</label>
-                        </div>
-                        <div class="gender-input">
-                            <input id="acompanhante" type="radio" name="tipo_hospedagem" value="Acompanhante" required>
-                            <label for="acompanhante">Acompanhante</label>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
+                                                    
                 <div class="inputBox">
-                    <input type="text" name="hospital" id="hospital" class="inputUser" maxlength="45" placeholder="">
-                    <label for="hospital" class="lableInput">Hospital</label>
+                    <input type="text" name="local_destino" id="local_destino" class="inputUser" maxlength="45" placeholder="" list="polos" autocomplete="off">
+                    <label for="local_destino" class="lableInput">Local de Destino</label>
                 </div>
-
+                
                 <div class="inputBox">
-                    <input type="text" name="tipo_consulta" id="tipo_consulta" class="inputUser" maxlength="20" placeholder="">
-                    <label for="tipo_consulta" class="lableInput">Tipo Da Consulta</label>
+                    <input type="text" name="motorista" id="motorista" class="inputUser" maxlength="45" placeholder="">
+                    <label for="motorista" class="lableInput">Motorista</label>
                 </div>
-
-                <div class="inputBox">
-                    <label for="data_consulta">Data Da Consulta:</label>
-                    <input type="datetime-local" name="data_consulta" id="data_consulta" class="inputUser">
-                </div>
-
-                <div class="inputBox">
-                    <input type="text" name="observacoes" id="observacoes" class="inputUser" maxlength="45" placeholder="" autocomplete="off">
-                    <label for="nome" class="lableInput">Observações</label>
-                </div>
-                <!--
-                <div class="genderInputs">
-                    <div class="genderTitle">
-                        <p>Realizou</p>
-                    </div>
-                    <div class="realizou-group">
-                        <div class="realizou-input">
-                            <input id="yes" type="radio" name="realizou" value="Sim">
-                            <label for="yes">Sim</label>
-                        </div>
-                        <div class="realizou-input">
-                            <input id="no" type="radio" name="realizou" value="Não">
-                            <label for="no">Não</label>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                -->
-
-                <div class="inputBox">
-                    <label for="data_entrada">Data De Entrada:</label>
-                    <input type="datetime-local" name="data_entrada" id="data_entrada" class="inputUser" required>
-                </div>
-
+                
                 <div class="inputBox">
                     <label for="data_saida">Data De Saída:</label>
                     <input type="datetime-local" name="data_saida" id="data_saida" class="inputUser" required>
                 </div>
-
+                
+                <div class="inputBox">
+                    <input type="text" name="complemento" id="complemento" class="inputUser" maxlength="90" placeholder="" autocomplete="off">
+                    <label for="nome" class="lableInput">Complemento</label>
+                </div>
+                
                 <input type="submit" name="submit" id="submit" value="Enviar">
             </fieldset>
         </form>

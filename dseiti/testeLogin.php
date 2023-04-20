@@ -1,8 +1,6 @@
 <?php
 
 session_start();
-
- // print_r($_REQUEST)
  if(isset($_POST['submit']) && !empty($_POST['nome-login']) && !empty($_POST['senha']))
  {
     include_once('config.php');
@@ -13,8 +11,6 @@ session_start();
 
     $result = $conexao->query($sql);
 
-    // print_r($result);
-    // print_r($sql);
 
    if(mysqli_num_rows($result) < 1)
    {

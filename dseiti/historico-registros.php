@@ -9,14 +9,13 @@
 
  if(!empty($_GET['search'])){
     $data = $_GET['search'];
-    $sql = "SELECT * FROM registros WHERE id LIKE '%$data%' or nome_tradicional LIKE '%$data%' or nome LIKE '%$data%' or sexo LIKE '%$data%' or indigena LIKE '%$data%' or aldeia LIKE '%$data%' or etinia LIKE '%$data%' or cpf LIKE '%$data%' or cartao_sus LIKE '%$data%' ORDER BY id DESC";
+    $sql = "SELECT * FROM registros WHERE id LIKE '%$data%' or nome LIKE '%$data%' or patrimonio LIKE '%$data%' or tombamento LIKE '%$data%' or status LIKE '%$data%' or descricao LIKE '%$data% ORDER BY id DESC";
 }
 else{
     $sql = "SELECT * FROM registros ORDER BY id DESC";
 }
 
  $result = $conexao->query($sql);
- // print_r($result);
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASAI | Historico de Registros</title>
+    <title>Historico de Registros</title>
     <link rel="stylesheet" href="assets//css//historico-tabelas-registro.css">
     <style>
         table{
@@ -49,7 +48,7 @@ else{
     <div class="box-search">
         <input type="text" placeholder="Pesquisar" id="Pesquisar">
         <button class="btn-search" onclick="searchData()">
-            <img src="assets//img//svg//search.svg" alt="Icone de uma lupa">
+            <img src="assets/img/svg/search.svg" alt="Icone de uma lupa">
         </button>
     </div>
 
@@ -59,15 +58,12 @@ else{
         <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Sexo</th>
-                <th scope="col">Data de Nascimento</th>
-                <th scope="col">Indigena</th>
-                <th scope="col">Etinia</th>
-                <th scope="col">CPF</th>
-                <th scope="col">RG</th>
-                <th scope="col">Cartão Sus</th>
+                <th scope="col">Patrimonio</th>
+                <th scope="col">Tombamento</th>
+                <th scope="col">Status</th>
+                <th scope="col">Descrição</th>
             </tr>
         </thead>
         <tbody>
@@ -78,26 +74,23 @@ else{
                     echo "<tr>";
                     echo "<td>".$registros_data['id']."</td>";
                     echo "<td>".$registros_data['nome']."</td>";
-                    echo "<td>".$registros_data['sexo']."</td>";
-                    echo "<td>".$registros_data['data_nascimento']."</td>";
-                    echo "<td>".$registros_data['indigena']."</td>";
-                    echo "<td>".$registros_data['etinia']."</td>";
-                    echo "<td>".$registros_data['cpf']."</td>";
-                    echo "<td>".$registros_data['rg']."</td>";
-                    echo "<td>".$registros_data['cartao_sus']."</td>";
+                    echo "<td>".$registros_data['patrimonio']."</td>";
+                    echo "<td>".$registros_data['tombamento']."</td>";
+                    echo "<td>".$registros_data['status']."</td>";
+                    echo "<td>".$registros_data['descricao']."</td>";
                     echo "<td>
                             <a href='registro-completo.php?id=$registros_data[id]' >
-                            <img src='assets//img//svg//file-invoice.svg' alt='Icone de uma ficha'>
+                            <img src='assets/img/svg/file-invoice.svg' alt='Icone de uma ficha'>
                             </a>
                         </td>";
                     echo "<td>
                             <a href='registro-editar.php?id=$registros_data[id]' >
-                            <img src='assets//img//svg//edit(1).svg' alt='Icone de um lapis'>
+                            <img src='assets/img/svg/edit(1).svg' alt='Icone de um lapis'>
                             </a>
                         </td>";
                     echo "<td>
                             <a href='registro-excluir.php?id=$registros_data[id]'>
-                            <img src='assets//img//svg//trash2.svg' alt='Icone de um lapis'>
+                            <img src='assets/img/svg/trash2.svg' alt='Icone de um lapis'>
                             </a>
                         </td>";
                     echo "</tr>";
