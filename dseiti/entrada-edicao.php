@@ -3,43 +3,20 @@
 
     if(isset($_POST['update']))
     {   
-        
         $id = $_POST['id'];
-        $tipo_hospedagem = $_POST['tipo_hospedagem'];
-        $hospital = $_POST['hospital'];
-        $tipo_consulta = $_POST['tipo_consulta'];
-        $data_consulta = $_POST['data_consulta'];
-        $observacoes = $_POST['observacoes'];
-        $realizou = $_POST['realizou'];
-        $data_entrada = $_POST['data_entrada'];
+        $nome = $_POST['nome'];
+        $id_pc = $_POST['id_pc'];
+        $local_origem = $_POST['local_origem'];
+        $local_destino = $_POST['local_destino'];
+        $motorista = $_POST['motorista'];
         $data_saida = $_POST['data_saida'];
+        $complemento = $_POST['complemento'];
 
-        $sqlUpdate = "UPDATE entradas SET tipo_Hospedagem='$tipo_hospedagem',hospital='$hospital',tipo_Consulta='$tipo_consulta',data_consulta='$data_consulta',observacoes='$observacoes',realizou='$realizou',data_Entrada='$data_entrada',data_Saida='$data_saida' WHERE identradas='$id'";
+        $sqlUpdate = "UPDATE entradas SET local_origem='$local_origem',local_destino='$local_destino',motorista='$motorista',data_saida='$data_saida',complemento='$complemento' WHERE identradas='$id'";
+        $sqlUpdate2 = "UPDATE registros SET local_atual='$local_destino' WHERE id='$id_pc'";
 
         $result = $conexao->query($sqlUpdate);
-
-        //   if($conexao->connect_errno)
-        //   {  
-        //       echo "Erro";
-        //   }
-        //   else
-        //   {
-        //       echo "Conectado";
-        //   }
-
-        //   echo $id;
-        //   echo $nome;
-        //   echo $nomeTradicional;
-        //   echo $sexo;
-        //   echo $nascimento;
-        //   echo $indigena;
-        //   echo $etinia;
-        //   echo $aldeia;
-        //   print_r('---');
-        //   echo $cpf;
-        //   print_r('---');
-        //   echo $sus;
-        //   echo $complemento;
+        $result2 = $conexao->query($sqlUpdate2);
 
         header('Location: historico-entradas.php');
     }

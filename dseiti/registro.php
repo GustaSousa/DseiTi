@@ -55,7 +55,7 @@
                 <fieldset>
                     <legend><b>Registro</b></legend>
                     <div class="inputBox">
-                        <input type="text" name="nome" id="nome" class="inputUser" maxlength="45" placeholder="Digite O Nome Completo (Obrigatório)" autocomplete="off" required>
+                        <input type="text" name="nome" id="nome" class="inputUser" maxlength="45" placeholder="" autocomplete="off" required>
                         <label for="nome" class="lableInput">Nome</label>
                     </div>
                     <div class="inputBox">

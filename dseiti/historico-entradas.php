@@ -77,8 +77,8 @@ $result = $conexao->query($sql);
                 <th scope="col">ID</th>
                 <th scope="col">Local de Origem</th>
                 <th scope="col">Local de Destino</th>
-                <th scope="col">Motorista</th>
                 <th scope="col">Data de Saída</th>
+                <th scope="col">Motorista</th>
                 <th scope="col">complemento</th>
             </tr>
         </thead>

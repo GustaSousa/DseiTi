@@ -20,6 +20,9 @@
         $complemento = $_POST['complemento'];
 
         $result = mysqli_query($conexao, "INSERT INTO entradas (nome,id_pc,local_origem,local_destino,motorista,data_saida,complemento) VALUES ('$nome','$id_pc','$local_origem','$local_destino','$motorista','$data_saida','$complemento')");
+       
+        $sqlUpdate2 = "UPDATE registros SET local_atual='$local_destino' WHERE id='$id_pc'";
+        $result2 = $conexao->query($sqlUpdate2);
 
         header('Location: historico-entradas.php');
     }
@@ -59,7 +62,7 @@
                 </div>
                 
                 <div class="inputBox">
-                        <input type="text" name="id_pc" id="id_pc" class="inputUser" maxlength="45" placeholder="" autocomplete="off" required>
+                        <input type="text" name="id_pc" id="id_pc" class="inputUser" maxlength="45" placeholder="SELECIONE UM ID JÁ REGISTRADO!" autocomplete="off" required>
                         <label for="id_pc" class="lableInput">ID</label>
                 </div>
                 
