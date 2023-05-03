@@ -22,7 +22,7 @@ session_start();
    {
       $_SESSION['nome-login'] = $login;
       $_SESSION['senha'] = $senha;
-      header('Location: home.php');
+      header('Location: backup.php');
    }
  }
  else
